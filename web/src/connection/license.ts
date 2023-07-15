@@ -1,5 +1,5 @@
 
-// arquivo de tokens de acesso
+// arquivo de tokens de acesso ..
 
 export const license = {
     client_id: "aec91af126cb430f8aff39097b642be9",
