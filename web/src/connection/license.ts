@@ -1,3 +1,6 @@
+
+// arquivo de tokens de acesso
+
 export const license = {
     client_id: "aec91af126cb430f8aff39097b642be9",
     redirect_uri: "http://localhost:5173/playlists",
