@@ -23,6 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-/src/connection/license.ts
+src/connection/license.ts
 
 .gitignore

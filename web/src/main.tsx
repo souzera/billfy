@@ -6,25 +6,30 @@ import './index.css'
 import { Home } from './routes/home/home.tsx'
 import { Login } from './routes/login/login.tsx'
 import { Playlist } from './routes/playlist/playlist.tsx'
+import { PlalistContextProvider } from './components/context/playlist-context.tsx'
 
-export const router  = createBrowserRouter([
+export const router = createBrowserRouter([
   {
-    path:"/",
-    element:<Home/>
+    path: "/",
+    element: <Home />
   },
   {
-    path:'login',
-    element:<Login/>
+    path: 'login',
+    element: <Login />
   },
   {
-    path:'playlists',
-    element:<Playlist/>
+    path: 'playlists',
+    element: <PlalistContextProvider>
+      <Playlist />
+    </PlalistContextProvider>
   }
 ])
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
+    <RouterProvider router={router} />
+  </React.StrictMode>
 )
+
+

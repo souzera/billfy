@@ -23,3 +23,15 @@ body{
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+@media (max-width: 800px) {
+  
+  #image-login-container{
+    display: none;
+  }
+
+  #playlists-body{
+    flex-direction: column;
+  }
+
+}

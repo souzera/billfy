@@ -10,7 +10,7 @@ export function Login() {
     return (
 
         <div className='flex flex-1 h-screen bg-black'>
-            <div className='flex h-screen w-[65%]'>
+            <div id="image-login-container" className='flex h-screen w-[65%]'>
                 <div className='h-[100%] w-[100%]'>
                     <img className='object-cover w-full h-full' src="https://cdna.artstation.com/p/assets/images/images/064/562/054/large/porforever-03-secret-aquarium.jpg?1688217216" alt="ilustracao" />
                 </div>

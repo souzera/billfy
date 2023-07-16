@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { AccessTokenProps } from "../routes/playlist/playlist"
 
 export interface UsuarioProps {
     display_name: string,
@@ -14,7 +13,8 @@ export interface UsuarioProps {
     ],
     external_urls: {
         spotify: string,
-    }
+    },
+    id: string
 }
 
 interface UsuarioBadgeProps {
@@ -28,28 +28,28 @@ export function UsuarioBadge({ token_type, access_token }: UsuarioBadgeProps) {
 
     const [usuario, setUsuario] = useState<UsuarioProps>()
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const responseData = await axios.get('https://api.spotify.com/v1/me', {
-                    headers: {
-                        Authorization: auth,
-                        "Content-Type": "application/json"
-                    }
-                })
-                setUsuario(responseData.data)
-            } catch (err) {
-                console.log(err)
-            }
+    const fetchData = async () => {
+        try {
+            const responseData = await axios.get('https://api.spotify.com/v1/me', {
+                headers: {
+                    Authorization: auth,
+                    "Content-Type": "application/json"
+                }
+            })
+            setUsuario(responseData.data)
+        } catch (err) {
+            console.log(err)
         }
+    }
 
+    useEffect(() => {
         fetchData()
-    })
+    },[token_type,access_token])
 
     return (
         <>
-            <div className="flex items-center hover:bg-[#202020] text-white py-2 px-4 justify-start rounded-full hover:scale-105 transition duration-600 ease-in-out hover:ease-out gap-3">
-                <div className='flex flex-1 h-[4rem] w-auto'>
+            <div className="flex items-center text-white py-2 px-4 justify-start rounded-full hover:scale-105 transition duration-600 ease-in-out hover:ease-out gap-3">
+                <div className='flex'>
                     <img className='border-solid border-black border-4 rounded-full' src={usuario?.images[0].url} alt="foto de perfil" />
                 </div>
                 <div className="flex flex-col w-[11rem] justify-start">

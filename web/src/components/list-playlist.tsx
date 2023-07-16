@@ -2,10 +2,16 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { AccessTokenProps } from "../routes/playlist/playlist"
 import { CardPlaylist, PlaylistProps } from "./playlist-container"
+import { getSelectedPlaylist, setSelectedPlaylist } from "../util/selected-playlist"
+import { usePlaylistContext } from "./context/playlist-context"
 
 interface ListPlaylistProps extends AccessTokenProps {
     title: string,
+    limit?: number,
+    offset?: number,
 }
+
+export var exportIdPlaylist = 'undefined'
 
 export function ListPlaylist(props: ListPlaylistProps) {
 
@@ -13,9 +19,17 @@ export function ListPlaylist(props: ListPlaylistProps) {
 
     const authorization = `${props.token_type} ${props.access_token}`
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const responseData = await axios.get('https://api.spotify.com/v1/me/playlists',
+
+
+    const fetchData = async () => {
+        let limite = 40
+        if (props.limit != null) {
+            limite = props.limit
+        }
+
+        try {
+
+            const responseData = await axios.get(`https://api.spotify.com/v1/me/playlists?limit=${limite}`,
                 {
                     headers: {
                         Authorization: authorization,
@@ -23,11 +37,17 @@ export function ListPlaylist(props: ListPlaylistProps) {
                     }
                 })
             setPlaylists(responseData.data.items)
-            console.log(playlists)
+            console.log(responseData.data.items)
+        } catch (err) {
+            console.log(err)
         }
+    }
 
+    useEffect(() => {
         fetchData()
-    })
+    }, [authorization])
+
+    const {setPlaylistSelected} = usePlaylistContext()
 
     return (
         <>
@@ -35,22 +55,29 @@ export function ListPlaylist(props: ListPlaylistProps) {
             <div className="grid grid-cols-4 gap-4">
                 {playlists.map((playlist, index) => {
 
+
                     let subdesc = playlist.description
                     if (subdesc.length > 64) {
-                        subdesc = `${playlist.description.substring(0, 42)} ...`
+                        subdesc = `${playlist.description.substring(0, 35)} ...`
                     }
 
                     let nameAdapter = playlist.name
-                    if (nameAdapter.length > 18) {
-                        nameAdapter = `${playlist.name.substring(0, 18)} ...`
+                    if (nameAdapter.length > 17) {
+                        nameAdapter = `${playlist.name.substring(0, 15)} ...`
                     }
+
                     return (
                         <div>
-                            <CardPlaylist
-                                name={nameAdapter}
-                                image={playlist.images[0].url}
-                                href={playlist.external_urls.spotify}
-                                desc={subdesc} />
+
+                            <button type="button" onClick={() => {
+                                setPlaylistSelected(playlist.id)
+                            }}>
+                                <CardPlaylist
+                                    name={nameAdapter}
+                                    image={playlist.images[0].url}
+                                    href={playlist.external_urls.spotify}
+                                    desc={subdesc} />
+                            </button>
                         </div>
                     )
                 })}

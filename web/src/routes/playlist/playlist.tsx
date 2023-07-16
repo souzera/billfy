@@ -1,11 +1,14 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { UsuarioBadge } from "../../components/usuario-badge"
 
 import { RiSettings3Fill } from 'react-icons/ri'
-import { CardPlaylist } from "../../components/playlist-container"
-import { ListPlaylist } from "../../components/list-playlist"
 import { license } from "../../connection/license"
+import { AudioContainer } from "../../components/audio-container"
+import { ListPlaylist } from "../../components/list-playlist"
+import { getSelectedPlaylist } from "../../util/selected-playlist"
+import ReactDOM from "react-dom"
+import { PlalistContextProvider, usePlaylistContext } from "../../components/context/playlist-context"
 
 const client_id = license.client_id
 const redirect_uri = license.redirect_uri
@@ -49,8 +52,6 @@ export function Playlist() {
     data.append('redirect_uri', authOptions.form.redirect_uri)
     data.append("grant_type", authOptions.form.grant_type)
 
-
-
     useEffect(() => {
         axios(
             {
@@ -73,19 +74,23 @@ export function Playlist() {
             }
         )
 
-    })
+    }, [])
+
+    const { playlistSelected } = usePlaylistContext()
+    console.log(playlistSelected)
 
     return (
 
-        <div className="flex flex-1 h-screen w-screen">
-
+        <div id="playlists-body" className="flex flex-1 h-screen w-screen overflow-hidden">
 
             <div className="flex p-6 flex-col w-[30%] ">
+
                 <div className="flex items-center gap-0 py-3 px-5 rounded-2xl bg-[#121212]">
-                    <div className="flex flex-1">
+
+                    <div className="flex">
                         <UsuarioBadge
                             access_token={access_token}
-                            token_type={token_type}/>
+                            token_type={token_type} />
                     </div>
 
                     <div className="hover:scale-110 hover:rotate-180 transition duration-1000 ease-out">
@@ -97,17 +102,16 @@ export function Playlist() {
                     </div>
                 </div>
 
-                <div className="flex flex-wrap flex-col text-black m-5 gap-4 ">
-                    <p>Minhas Playlists</p>
-                    <p className="text-sm"> {access_token} </p>
-                    <p className="text-sm"> {refresh_token} </p>
-                    <p className="text-sm"> {expires_in} </p>
-                    <p className="text-sm"> {token_type} </p>
-                    <p className="text-sm"> {scope} </p>
+
+                <div id="audio-track" >
+                    {playlistSelected && <AudioContainer href={playlistSelected} />}
                 </div>
+
+
             </div>
 
-            <div className="flex flex-1 w-[70%] py-5 px-10 text-white flex-col gap-8">
+            <div className="flex flex-1 w-[70%] py-5 px-10 text-white flex-col gap-8 overflow-auto">
+
                 <ListPlaylist
                     title={"Minhas Playlists"}
                     access_token={access_token}
@@ -116,21 +120,23 @@ export function Playlist() {
                     scope={scope}
                     token_type={token_type} />
 
-                <div className="grid grid-cols-5">
-                    <CardPlaylist
-                        image={"https://i.scdn.co/image/ab67706c0000da8410cf1af5b29d5f20a38cee8c"}
-                        name={"Aldebaram Hits"}
-                        desc={"Seleção do mais brabo Aldebaran de touro"}
-                        href={"https://open.spotify.com/playlist/4hH2imlN5WSxKe7qLfmvSh?si=953ff79920214167"} />
-                </div>
-
-
             </div>
         </div>
     )
+
 }
 
 
+
 /*
+
+<div className="flex flex-wrap flex-col text-black m-5 gap-4 ">
+                    <p>Minhas Playlists</p>
+                    <p className="text-sm"> {access_token} </p>
+                    <p className="text-sm"> {refresh_token} </p>
+                    <p className="text-sm"> {expires_in} </p>
+                    <p className="text-sm"> {token_type} </p>
+                    <p className="text-sm"> {scope} </p>
+                </div>
     
 */
