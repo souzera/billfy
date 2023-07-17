@@ -47,7 +47,7 @@ export function UsuarioBadge({ token_type, access_token }: UsuarioBadgeProps) {
     },[token_type,access_token])
 
     return (
-        <>
+        <div className='w-[100%] h-[100%]'>
             <div className="flex items-center text-white py-2 px-4 justify-start rounded-full hover:scale-105 transition duration-600 ease-in-out hover:ease-out gap-3">
                 <div className='flex'>
                     <img className='border-solid border-black border-4 rounded-full' src={usuario?.images[0].url} alt="foto de perfil" />
@@ -61,6 +61,6 @@ export function UsuarioBadge({ token_type, access_token }: UsuarioBadgeProps) {
                     </span>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

@@ -1,4 +1,4 @@
-import { PlalistContextProvider } from "./components/context/playlist-context"
+
 import { Home } from "./routes/home/home"
 
 function App() {

@@ -52,7 +52,7 @@ export function ListPlaylist(props: ListPlaylistProps) {
     return (
         <>
             <h1 className="font-bold text-3xl">{props.title}</h1>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 gap-4 max-md:grid-cols-1">
                 {playlists.map((playlist, index) => {
 
 
