@@ -18,18 +18,19 @@ export function Login() {
 
             <div className='flex flex-1 flex-col h-100 w-100 gap-7 justify-center items-center'>
 
-                <div className='w-[50%] h-auto'>
-                    <img src="./src/assets/img/logo/spotify-green.svg" alt="logo spotify" />
+                <div className='flex justify-center items-center gap-3 h-auto'>
+                    <img className="w-[40%]" src="./src/assets/img/logo/billfy-green.svg" alt="logo billfy" />
+                    <strong className="text-spotify text-5xl">Billfy</strong>
                 </div>
 
 
-                <div className='w-[50%] h-auto'>
+                <div className='w-[60%] h-auto'>
                     <p className='font-bold text-white text-sm'>
                         Compartilhe e descubra playlists incríveis na nossa plataforma!
                     </p>
                 </div>
 
-                <div className='bg-spotify py-3 p-5 font-bold rounded-full'>
+                <div className='bg-spotify flex py-3 p-5 font-extrabold rounded-full'>
                     <button type="button" onClick={() => {
                         location.href = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}`
                     }

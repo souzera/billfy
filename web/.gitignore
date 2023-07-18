@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 
 src/connection/license.ts
+/web/src/connection/license.tsx
 
 .gitignore

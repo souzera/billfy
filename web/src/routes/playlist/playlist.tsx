@@ -85,7 +85,7 @@ export function Playlist() {
 
             <div className="flex p-6 flex-col w-[30%] ">
 
-                <div className="flex items-center gap-0 py-3 px-5 rounded-2xl bg-[#121212]">
+                <div className="flex items-center gap-0 py-3 px-5 rounded-2xl bg-[#121212] w-[100%]">
 
                     <div className="flex">
                         <UsuarioBadge
@@ -110,7 +110,7 @@ export function Playlist() {
 
             </div>
 
-            <div className="flex flex-1 w-[70%] py-5 px-10 text-white flex-col gap-8 overflow-auto">
+            <div className="flex flex-1 w-[70%] py-5 px-10 text-white flex-col gap-8 overflow-auto max-md:justify-center">
 
                 <ListPlaylist
                     title={"Minhas Playlists"}
