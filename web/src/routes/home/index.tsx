@@ -1,6 +1,14 @@
 import { BsSpotify } from 'react-icons/bs'
+import { useNavigate } from 'react-router-dom'
 
 export function Home() {
+
+    const navigate = useNavigate()
+
+    const handleLoginButton = () => {
+        navigate("/login")
+    }
+
     return (
 
         <div className="gap-3 bg-zinc-950 h-screen text-white font-bold justify-center items-center">
@@ -14,7 +22,7 @@ export function Home() {
                     </div>
 
                     <div className=' flex items-center px-10 gap-6'>
-                        <a className='hover:scale-105 transition ease-out' href="/login">Login</a>
+                        <span className='hover:scale-105 transition ease-out' onClick={handleLoginButton}>Login</span>
                         <a href="https://www.spotify.com/br-pt/signup">
                             <div className=' flex flex-1 bg-spotify scale-95 hover:scale-100 transition ease-out py-3 px-6 rounded-full'>
                                 Cadastrar-se
@@ -46,12 +54,10 @@ export function Home() {
                                 </p>
 
                                 <div>
-                                    <a href="/login">
-                                        <div className=' flex gap-4 items-center text-zinc-950 font-bold bg-spotify scale-95 hover:scale-100 transition ease-out py-3 px-6 rounded-full'>
-                                            <BsSpotify size={24} />
-                                            Logar com Spotify
-                                        </div>
-                                    </a>
+                                    <div onClick={handleLoginButton} className=' flex gap-4 items-center text-zinc-950 font-bold bg-spotify scale-95 hover:scale-100 transition ease-out py-3 px-6 rounded-full'>
+                                        <BsSpotify size={24} />
+                                        Logar com Spotify
+                                    </div>
                                 </div>
                             </div>
                         </div>
