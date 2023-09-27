@@ -24,7 +24,7 @@ export function Home() {
                     <div className=' flex items-center px-10 gap-6'>
                         <span className='hover:scale-105 transition ease-out' onClick={handleLoginButton}>Login</span>
                         <a href="https://www.spotify.com/br-pt/signup">
-                            <div className=' flex flex-1 bg-spotify scale-95 hover:scale-100 transition ease-out py-3 px-6 rounded-full'>
+                            <div className=' flex flex-1 bg-spotify scale-95 hover:scale-100 transition ease-out py-3 px-6 rounded-full text-zinc-950'>
                                 Cadastrar-se
                             </div>
                         </a>

@@ -1,3 +1,4 @@
+//import { useNavigate } from "react-router-dom"
 import { license } from "../../connection/license"
 
 
@@ -6,6 +7,8 @@ const redirect_uri = license.redirect_uri
 const scope = license.scope
 
 export function Login() {
+
+    //const navigate = useNavigate()
 
     return (
 
