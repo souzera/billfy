@@ -1,14 +1,14 @@
 import axios from "axios"
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { UsuarioBadge } from "../../components/usuario-badge"
 
 import { RiSettings3Fill } from 'react-icons/ri'
 import { license } from "../../connection/license"
 import { AudioContainer } from "../../components/audio-container"
 import { ListPlaylist } from "../../components/list-playlist"
-import { getSelectedPlaylist } from "../../util/selected-playlist"
-import ReactDOM from "react-dom"
-import { PlalistContextProvider, usePlaylistContext } from "../../components/context/playlist-context"
+//import { getSelectedPlaylist } from "../../util/selected-playlist"
+//import ReactDOM from "react-dom"
+import { usePlaylistContext } from "../../components/context/playlist-context"
 
 const client_id = license.client_id
 const redirect_uri = license.redirect_uri
@@ -51,6 +51,8 @@ export function Playlist() {
     data.append("code", code)
     data.append('redirect_uri', authOptions.form.redirect_uri)
     data.append("grant_type", authOptions.form.grant_type)
+
+    console.log(new URLSearchParams(data).toString())
 
     useEffect(() => {
         axios(

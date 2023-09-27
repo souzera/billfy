@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { AccessTokenProps } from "../routes/playlist/playlist"
 import { CardPlaylist, PlaylistProps } from "./playlist-container"
-import { getSelectedPlaylist, setSelectedPlaylist } from "../util/selected-playlist"
+//import { getSelectedPlaylist, setSelectedPlaylist } from "../util/selected-playlist"
 import { usePlaylistContext } from "./context/playlist-context"
 
 interface ListPlaylistProps extends AccessTokenProps {
@@ -53,7 +53,7 @@ export function ListPlaylist(props: ListPlaylistProps) {
         <>
             <h1 className="font-bold text-3xl">{props.title}</h1>
             <div className="grid grid-cols-4 gap-4 max-md:grid-cols-1">
-                {playlists.map((playlist, index) => {
+                {playlists.map((playlist) => {
 
 
                     let subdesc = playlist.description

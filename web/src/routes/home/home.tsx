@@ -1,6 +1,6 @@
+import { BsSpotify } from 'react-icons/bs'
+
 export function Home() {
-
-
     return (
 
         <div className="gap-3 bg-zinc-950 h-screen text-white font-bold justify-center items-center">
@@ -14,9 +14,9 @@ export function Home() {
                     </div>
 
                     <div className=' flex items-center px-10 gap-6'>
-                        <a className='hover:scale-110 transition ease-out' href="/login">Login</a>
+                        <a className='hover:scale-105 transition ease-out' href="/login">Login</a>
                         <a href="https://www.spotify.com/br-pt/signup">
-                            <div className='bg-spotify scale-95 hover:scale-100 transition ease-out py-3 px-6 rounded-full'>
+                            <div className=' flex flex-1 bg-spotify scale-95 hover:scale-100 transition ease-out py-3 px-6 rounded-full'>
                                 Cadastrar-se
                             </div>
                         </a>
@@ -28,11 +28,15 @@ export function Home() {
 
                 <main>
                     <div className='flex flex-1 justify-center items-center h-screen overflow-auto py-20 px-10'>
-                        <div className='flex flex-1 mx-14 pt-5 px-6 gap-5 text-sm font-normal'>
+                        <div className='flex flex-1 mx-14 pt-5 px-6 gap-12 text-sm font-normal'>
                             <div className='flex flex-col gap-3 hover:scale-105 transition duration-1000 ease-in-out'>
-                                <img className='w-[100vw] rounded-xl' src="https://m.media-amazon.com/images/I/91GRY6FzEcL._AC_SX569_.jpg" alt="capa cd queen" />
-                                <div className='h-[3px] bg-zinc-900 rounded-full' />
+                                <a href="https://open.spotify.com/intl-pt/album/5EAEpt26lzvDKNDFQD94b6?si=vR35x9AxRu6DsCSHlS0_8g">
+                                    <img className='w-[80vw] rounded-xl' src="https://m.media-amazon.com/images/I/91GRY6FzEcL._AC_SX569_.jpg" alt="capa cd queen" />
+                                    <div className='h-[3px] bg-zinc-900 rounded-full' />
+                                </a>
                             </div>
+
+
                             <div className='flex flex-col gap-3 transition ease-in-out transition-transform duration-1000 hover:scale-105'>
                                 <p className='text-5xl font-bold'>
                                     Descubra uma nova forma de desfrutar da sua coleção de músicas.
@@ -43,7 +47,8 @@ export function Home() {
 
                                 <div>
                                     <a href="/login">
-                                        <div className=' text-zinc-950 font-bold bg-spotify scale-95 hover:scale-100 transition ease-out py-3 px-6 rounded-full'>
+                                        <div className=' flex gap-4 items-center text-zinc-950 font-bold bg-spotify scale-95 hover:scale-100 transition ease-out py-3 px-6 rounded-full'>
+                                            <BsSpotify size={24} />
                                             Logar com Spotify
                                         </div>
                                     </a>
