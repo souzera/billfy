@@ -25,7 +25,7 @@ export interface AccessTokenProps {
 export function Playlist() {
 
     const params = new URLSearchParams(document.location.search)
-    const code = params.get("code")
+    const code = params.get("code")?.toString()
 
     const [access_token, setAccessToken] = useState('undefined')
     const [refresh_token, setRefreshToken] = useState('undefined')
@@ -46,20 +46,27 @@ export function Playlist() {
         },
     }
 
+    console.log(code)
 
     const data = new FormData()
-    data.append("code", code)
+    //data.append("code", code)
     data.append('redirect_uri', authOptions.form.redirect_uri)
     data.append("grant_type", authOptions.form.grant_type)
 
-    console.log(new URLSearchParams(data).toString())
+    console.log("Url Params")
+    //console.log(new URLSearchParams(data))
 
     useEffect(() => {
         axios(
             {
                 method: "POST",
                 url: authOptions.url,
-                data: new URLSearchParams(data).toString(),
+                //data: new URLSearchParams(data).toString(),
+                data: {
+                    code: code,
+                    redirect_uri: authOptions.form.redirect_uri,
+                    grant_type: authOptions.form.grant_type,
+                },
                 headers: {
                     Authorization: authOptions.headers.Authorization,
                     "Content-Type": 'application/x-www-form-urlencoded'

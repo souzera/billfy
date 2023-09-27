@@ -37,7 +37,7 @@ export function Home() {
                             </div>
 
 
-                            <div className='flex flex-col gap-3 transition ease-in-out transition-transform duration-1000 hover:scale-105'>
+                            <div className='flex flex-col gap-3 transition ease-in-out duration-1000 hover:scale-105'>
                                 <p className='text-5xl font-bold'>
                                     Descubra uma nova forma de desfrutar da sua coleção de músicas.
                                 </p>
