@@ -1,5 +1,5 @@
 
-import { Home } from "./routes/home/home"
+import { Home } from "./routes/home"
 
 function App() {
 

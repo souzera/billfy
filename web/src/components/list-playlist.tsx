@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { AccessTokenProps } from "../routes/playlist/playlist"
+import { AccessTokenProps } from "../routes/playlist"
 import { CardPlaylist, PlaylistProps } from "./playlist-container"
 //import { getSelectedPlaylist, setSelectedPlaylist } from "../util/selected-playlist"
 import { usePlaylistContext } from "./context/playlist-context"
