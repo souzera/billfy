@@ -69,7 +69,7 @@ export function Home() {
 
                         <div className='flex flex-col gap-2'>
                             <div className=' flex justify-center items-center gap-3 h-auto w-auto'>
-                                <img className='w-10' src="./src/assets/img/logo/billfy-black.svg" alt="logo billfy" />
+                                <img className='w-10' src="https://raw.githubusercontent.com/souzera/billfy/71239e15f8d29f6f1753c28fea30d7acbe60cf60/web/src/assets/img/logo/billfy-black.svg" alt="logo billfy" />
                                 <strong className="text-zinc-900 text-xl">Billfy</strong>
                             </div>
 

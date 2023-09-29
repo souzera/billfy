@@ -1,5 +1,5 @@
 {
     "redirects": [
-        { "source": "/playlists/:code", "destination": "/playlists.tsx"}
+        { "source": "/playlists/:code", "destination": "/playlists"}
     ]
 }
