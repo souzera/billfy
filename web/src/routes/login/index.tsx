@@ -20,7 +20,7 @@ export function Login() {
             <div className='flex flex-1 flex-col h-100 w-100 gap-7 justify-center items-center'>
 
                 <div className='flex justify-center items-center gap-3 h-auto'>
-                    <img className="w-[40%]" src="./src/assets/img/logo/billfy-green.svg" alt="logo billfy" />
+                    <img className="w-[40%]" src="https://raw.githubusercontent.com/souzera/billfy/b0db54ce0291b0f7da8d30cce908ef52ce60dfe5/web/src/assets/img/logo/billfy-green.svg" alt="logo billfy" />
                     <strong className="text-spotify text-5xl">Billfy</strong>
                 </div>
 
