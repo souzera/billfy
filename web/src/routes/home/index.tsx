@@ -17,7 +17,7 @@ export function Home() {
                 <div className=' flex w-screen h-[10vh] justify-evenly items-center'>
                     <div className='flex flex-1 h-[100%]  items-center gap-3 px-10'>
                         <a className="flex h-[60%] hover:scale-110 transition ease-out" href="/">
-                            <img src="./src/assets/img/logo/billfy-green.svg" alt="logo billfy" />
+                            <img src="https://raw.githubusercontent.com/souzera/billfy/b0db54ce0291b0f7da8d30cce908ef52ce60dfe5/web/src/assets/img/logo/billfy-green.svg" alt="logo billfy" />
                         </a>
                     </div>
 
