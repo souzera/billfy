@@ -1,4 +1,4 @@
-import { redirect } from "react-router-dom"
+
 import { license } from "../../connection/license"
 
 
