@@ -33,7 +33,7 @@ export function Login() {
 
                 <div className='bg-spotify flex py-3 p-5 font-extrabold rounded-full'>
                     <button type="button" onClick={() => {
-                        location.href =  `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}`
+                        location.href = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}`
 
                         console.log(location)
                     }
