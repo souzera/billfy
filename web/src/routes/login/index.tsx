@@ -1,5 +1,7 @@
-
+import axios from "axios"
+import { useAuthContext } from "../../components/context/auth-context"
 import { license } from "../../connection/license"
+import { Link } from "react-router-dom"
 
 
 const client_id = license.client_id
@@ -7,6 +9,8 @@ const redirect_uri = license.redirect_uri
 const scope = license.scope
 
 export function Login() {
+
+    const { setAuth } = useAuthContext()
 
     return (
 
@@ -31,14 +35,15 @@ export function Login() {
                     </p>
                 </div>
 
-                <div className='bg-spotify flex py-3 p-5 font-extrabold rounded-full'>
-                    <button type="button" onClick={() => {
-                        location.href = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}`
+                <Link to={`https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}`}>
+                    <div className='bg-spotify flex py-3 p-5 font-extrabold rounded-full'>
+                        {/**<button type="button" onClick={() => {
+                            //location.href = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}`
+                        }}> Logar com Spotify</button>**/}
 
-                        console.log(location)
-                    }
-                    }> Logar com Spotify</button>
-                </div>
+                        Logar com Spotify
+                    </div>
+                </Link>
 
             </div>
         </div>

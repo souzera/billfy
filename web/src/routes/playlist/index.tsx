@@ -9,6 +9,7 @@ import { ListPlaylist } from "../../components/list-playlist"
 //import { getSelectedPlaylist } from "../../util/selected-playlist"
 //import ReactDOM from "react-dom"
 import { usePlaylistContext } from "../../components/context/playlist-context"
+import { useAuthContext } from "../../components/context/auth-context"
 
 const client_id = license.client_id
 const redirect_uri = license.redirect_uri
@@ -26,6 +27,11 @@ export function Playlist() {
 
     const params = new URLSearchParams(document.location.search)
     const code = params.get("code")?.toString()
+
+    const { auth } = useAuthContext()
+
+    console.log("AuthContext: ")
+    console.log(auth)
 
     const [access_token, setAccessToken] = useState('undefined')
     const [refresh_token, setRefreshToken] = useState('undefined')
@@ -46,14 +52,14 @@ export function Playlist() {
         },
     }
 
-    console.log(code)
+    //console.log(code)
 
     const data = new FormData()
     //data.append("code", code)
     data.append('redirect_uri', authOptions.form.redirect_uri)
     data.append("grant_type", authOptions.form.grant_type)
 
-    console.log("Url Params")
+    //console.log("Url Params")
     //console.log(new URLSearchParams(data))
 
     useEffect(() => {
@@ -74,7 +80,6 @@ export function Playlist() {
             }
         ).then(
             response => {
-                console.log(response.data)
                 setAccessToken(response.data.access_token)
                 setRefreshToken(response.data.refresh_token)
                 setExpiresIn(response.data.expires_in)
