@@ -1,8 +1,3 @@
 {
-    "redirects": [
-        {
-            "source":"https://accounts.spotify.com/authorize/([^/]+)",
-            "destination": "/playlists/:code*"
-        }
-    ]
+    "redirects": []
 }
