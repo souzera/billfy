@@ -1,5 +1,5 @@
-import axios from "axios"
-import { useAuthContext } from "../../components/context/auth-context"
+
+//import { useAuthContext } from "../../components/context/auth-context"
 import { license } from "../../connection/license"
 import { Link } from "react-router-dom"
 
@@ -10,7 +10,7 @@ const scope = license.scope
 
 export function Login() {
 
-    const { setAuth } = useAuthContext()
+    //const { setAuth } = useAuthContext()
 
     return (
 
