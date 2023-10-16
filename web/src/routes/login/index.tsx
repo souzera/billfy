@@ -1,5 +1,6 @@
 
 //import { useAuthContext } from "../../components/context/auth-context"
+import axios from "axios"
 import { license } from "../../connection/license"
 import { Link } from "react-router-dom"
 
@@ -35,7 +36,7 @@ export function Login() {
                     </p>
                 </div>
 
-                <Link to={`https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}`}>
+                <Link to={`https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}&show_dialog=true`}>
                     <div className='bg-spotify flex py-3 p-5 font-extrabold rounded-full'>
                         {/**<button type="button" onClick={() => {
                             //location.href = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}`
