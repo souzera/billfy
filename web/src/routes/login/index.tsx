@@ -35,7 +35,7 @@ export function Login() {
                 </div>
 
                 <Link to={`https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}&show_dialog=true`}>
-                    <div className='bg-spotify flex py-3 p-5 font-extrabold rounded-full'>
+                    <div className='bg-spotify flex py-3 p-5 font-extrabold rounded-full cursor-pointer'>
                         {/**<button type="button" onClick={() => {
                             //location.href = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}`
                         }}> Logar com Spotify</button>**/}
