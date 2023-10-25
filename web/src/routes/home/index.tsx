@@ -20,7 +20,7 @@ export function Home() {
 
         if (auth !== '') {
             console.log("indo para playlists")
-            //navigate('/playlists')
+            navigate('/playlists')
         }
     },[auth])
 
