@@ -19,6 +19,7 @@ export function Home() {
         console.log(auth)
 
         if (auth !== undefined) {
+            console.log("indo para playlists")
             navigate('/playlists')
         }
     },[auth])
