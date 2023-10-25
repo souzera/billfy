@@ -9,6 +9,8 @@ import { Playlist } from './routes/playlist/index.tsx'
 import { PlalistContextProvider } from './components/context/playlist-context.tsx'
 import { AuthContextProvider } from './components/context/auth-context.tsx'
 
+
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -21,7 +23,7 @@ export const router = createBrowserRouter([
   {
     path: 'playlists',
     element: <PlalistContextProvider>
-      <Playlist />
+      <Playlist/>
     </PlalistContextProvider>
   }
 ])

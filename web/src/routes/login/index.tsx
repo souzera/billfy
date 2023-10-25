@@ -11,8 +11,6 @@ const scope = license.scope
 
 export function Login() {
 
-    //const { setAuth } = useAuthContext()
-
     return (
 
         <div className='flex flex-1 h-screen bg-black'>

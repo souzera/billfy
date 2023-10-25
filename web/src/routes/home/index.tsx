@@ -1,13 +1,27 @@
+import { useEffect } from 'react'
 import { BsSpotify } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
+import { useAuthContext } from '../../components/context/auth-context'
 
 export function Home() {
 
     const navigate = useNavigate()
 
+    const {auth,setAuth} = useAuthContext()
+
     const handleLoginButton = () => {
         navigate("/login")
     }
+
+    useEffect(() => {
+        const code = new URLSearchParams(document.location.search).get("code")?.toString()
+        const res = () => {(code) ? setAuth(code): console.log("sem codigo")};res();
+        console.log(auth)
+
+        if (auth !== undefined) {
+            navigate('/playlists')
+        }
+    },[auth])
 
     return (
 

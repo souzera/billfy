@@ -23,14 +23,11 @@ export interface AccessTokenProps {
     token_type: string
 }
 
+
 export function Playlist() {
 
-    const params = new URLSearchParams(document.location.search)
-    const code = params.get("code")?.toString()
+    const {auth} = useAuthContext()
 
-    const { auth } = useAuthContext()
-
-    console.log("AuthContext: ")
     console.log(auth)
 
     const [access_token, setAccessToken] = useState('undefined')
@@ -42,7 +39,7 @@ export function Playlist() {
     const authOptions = {
         url: 'https://accounts.spotify.com/api/token',
         form: {
-            code,
+            code: auth,
             redirect_uri,
             grant_type: "authorization_code"
         },
@@ -69,7 +66,7 @@ export function Playlist() {
                 url: authOptions.url,
                 //data: new URLSearchParams(data).toString(),
                 data: {
-                    code: code,
+                    code: auth,
                     redirect_uri: authOptions.form.redirect_uri,
                     grant_type: authOptions.form.grant_type,
                 },
