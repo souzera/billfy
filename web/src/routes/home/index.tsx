@@ -18,7 +18,7 @@ export function Home() {
         const res = () => {(code) ? setAuth(code): console.log("sem codigo")};res();
         console.log(auth)
 
-        if (auth !== undefined) {
+        if (auth !== '') {
             console.log("indo para playlists")
             //navigate('/playlists')
         }
