@@ -22,7 +22,7 @@ export function ListPlaylist(props: ListPlaylistProps) {
 
 
     const fetchData = async () => {
-        let limite = 40
+        let limite = 100
         if (props.limit != null) {
             limite = props.limit
         }
