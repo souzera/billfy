@@ -70,6 +70,7 @@ export function ListPlaylist(props: ListPlaylistProps) {
                         <div className="flex w-full">
                             <button type="button" onClick={() => {
                                 setPlaylistSelected(playlist.id)
+                                document.documentElement.scrollTop = 0;
                             }}>
                                 <CardPlaylist
                                     name={nameAdapter}
