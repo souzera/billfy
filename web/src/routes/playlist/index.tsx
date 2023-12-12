@@ -94,9 +94,9 @@ export function Playlist() {
 
         <div id="playlists-body" className="flex flex-1 h-screen w-screen overflow-hidden">
 
-            <div className="flex p-6 flex-col w-[30%] sm:w-[80%]">
+            <div className="flex p-6 flex-col w-[30%]">
 
-                <div className="flex items-center gap-0 py-3 px-5 rounded-2xl bg-[#121212] w-[100%]">
+                <div className="flex items-center gap-0 py-3 px-5 rounded-2xl bg-[#121212] w-[100%] max-sm:w-[90vw]">
 
                     <div className="flex">
                         <UsuarioBadge
