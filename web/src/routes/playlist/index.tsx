@@ -92,7 +92,7 @@ export function Playlist() {
 
     return (
 
-        <div id="playlists-body" className="flex flex-1 h-screen w-screen overflow-hidden">
+        <div id="playlists-body" className="flex h-screen w-screen overflow-hidden">
 
             <div className="flex p-6 flex-col w-[30%]">
 
