@@ -121,7 +121,7 @@ export function Playlist() {
 
             </div>
 
-            <div className="flex flex-1 w-[70%] py-5 px-10 text-white flex-col gap-8 overflow-auto max-md:justify-center">
+            <div className="flex flex-1 w-[70%] py-5 px-10 text-white flex-col items-center gap-8 overflow-auto max-md:justify-center">
 
                 <ListPlaylist
                     title={"Minhas Playlists"}
