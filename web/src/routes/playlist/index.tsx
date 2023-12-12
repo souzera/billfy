@@ -114,7 +114,7 @@ export function Playlist() {
                 </div>
 
 
-                <div id="audio-track" >
+                <div id="audio-track" className="max-sm:w-[90vw]">
                     {playlistSelected && <AudioContainer href={playlistSelected} />}
                 </div>
 
