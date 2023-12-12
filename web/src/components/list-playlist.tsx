@@ -67,8 +67,7 @@ export function ListPlaylist(props: ListPlaylistProps) {
                     }
 
                     return (
-                        <div>
-
+                        <div className="flex w-full">
                             <button type="button" onClick={() => {
                                 setPlaylistSelected(playlist.id)
                             }}>
