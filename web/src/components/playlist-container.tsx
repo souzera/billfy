@@ -22,7 +22,7 @@ export function CardPlaylist(props:CardPlaylistProps) {
 
     return (
         <>
-                <div className="flex flex-1 w-[50] h-86 flex-col justify-center items-start bg-[#121212] hover:bg-[#202020] hover:scale-110 p-4 rounded-xl transition ease-out gap-3">
+                <div className="flex flex-1 w-auto h-86 flex-col justify-center items-start bg-[#121212] hover:bg-[#202020] hover:scale-110 p-4 rounded-xl transition ease-out gap-3">
                     <div className="rounded-xl">
                         <img className="rounded-xl" src={props.image} alt="aldebaram hits" />
                     </div>
